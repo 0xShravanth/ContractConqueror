@@ -1,19 +1,19 @@
-// // SPDX-License-Identifier: UNLICENSED
-// pragma solidity ^0.8.13;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.13;
 
-// import {Script, console} from "forge-std/Script.sol";
-// import {Counter} from "../src/Counter.sol";
+import {Script, console} from "forge-std/Script.sol";
+import {BasicToken} from "../src/Erc20.sol";
 
-// contract CounterScript is Script {
-//     Counter public counter;
+contract CounterScript is Script {
+    BasicToken public counter;
 
-//     function setUp() public {}
+    function setUp() public {}
 
-//     function run() public {
-//         vm.startBroadcast();
+    function run() public {
+        vm.startBroadcast();
 
-//         counter = new Counter();
+        counter = new BasicToken("BasicToken", "CT", 1000);
 
-//         vm.stopBroadcast();
-//     }
-// }
+        vm.stopBroadcast();
+    }
+}
